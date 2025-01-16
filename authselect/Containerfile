@@ -1,0 +1,4 @@
+ARG tag=latest
+FROM quay.io/pbrezina/tb-base:${tag}
+
+RUN dnf builddep -y authselect
