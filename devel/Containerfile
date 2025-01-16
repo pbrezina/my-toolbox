@@ -1,0 +1,10 @@
+ARG tag=latest
+FROM quay.io/pbrezina/tb-base:${tag}
+
+RUN dnf builddep -y authselect
+RUN dnf builddep -y sssd
+RUN dnf install -y \
+    libssh-devel \
+    openldap-devel \
+    python3-devel \
+    ${NULL}

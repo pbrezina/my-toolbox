@@ -1,0 +1,34 @@
+ARG tag=latest
+FROM quay.io/fedora/fedora-toolbox:${tag}
+
+RUN dnf install -y \
+        authselect \
+        bash-completion \
+        clang \
+        clang-tools-extra \
+        curl \
+        fzf \
+        gcc \
+        gdb \
+        git \
+        git-clang-format \
+        pre-commit \
+        python3-pip \
+        python3-virtualenv \
+        python3-virtualenvwrapper \
+        strace \
+        tig \
+        tmate \
+        tmux \
+        vim \
+        vim-common \
+        vim-enhanced \
+        wget \
+        xclip \
+        ${NULL}
+
+# Install global python packages
+RUN pip3 install \
+        nutcli \
+        pygithub \
+        ${NULL}
